@@ -1,6 +1,6 @@
 import { checkForName } from './js/nameChecker'
 import { handleSubmit } from './js/formHandler'
-import {processText} from './js/textProcessor'
+import { processText } from './js/textProcessor'
 
 import './styles/resets.scss'
 import './styles/base.scss'
