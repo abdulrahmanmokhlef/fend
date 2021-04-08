@@ -19,9 +19,10 @@
 
         <main>
             <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onBlur="" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                <form class="" onsubmit="return Client.processText(event)">
+                    <textarea id="text" name="text" rows="4" cols="96">
+                    </textarea>         
+                    <input type="submit" name="" value="Process" onclick="return Client.processText(event)" onsubmit="return Client.processText(event)">
                 </form>
             <section>
 
