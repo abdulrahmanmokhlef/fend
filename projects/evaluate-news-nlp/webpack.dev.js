@@ -9,13 +9,16 @@ module.exports = {
     devtool: 'source-map',
     stats: 'verbose',
     output: {
+        path: path.join(__dirname, 'dist'),
+        filename: 'bundle.min.js',
         libraryTarget: 'var',
         library: 'Client'
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
             },
