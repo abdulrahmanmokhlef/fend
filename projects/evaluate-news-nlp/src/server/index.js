@@ -39,6 +39,7 @@ app.get('/test', function (req, res) {
     res.json(mockAPIResponse);
 })
 
+// For the Aylien API
 app.get('/textApi', function(text, res){
     debugger
     textapi.sentiment({
@@ -50,3 +51,6 @@ app.get('/textApi', function(text, res){
         }
       });
 })
+
+
+
