@@ -1,8 +1,15 @@
-function processText(text) {
+function processText(url,text, lang) {
     debugger
+    const fetch = require("node-fetch");
+
+    var textTemp = text; // adding this temp variable because that value is changed when use trim()
+    if(textTemp = null || textTemp.trim() ==""){
+        alert("You must insert a text.");
+        return false;
+    }
+
+
     let key ="201c43f2114dfcda474c3967055f646d";
-    let lang = "en"
-    let url = "https://api.meaningcloud.com/sentiment-2.1";
 
     const formdata = new FormData();
     formdata.append("key", key);
@@ -24,7 +31,7 @@ function processText(text) {
         let sentimented_concept_list = "";
 
         console.log(res)
-        
+
         document.getElementById('remaining_credits').innerHTML = res.status.remaining_credits;
 
         document.getElementById('model').innerHTML = res.model;
@@ -33,10 +40,7 @@ function processText(text) {
         document.getElementById('subjectivity').innerHTML = res.subjectivity;
         document.getElementById('confidence').innerHTML = res.confidence;
         document.getElementById('irony').innerHTML = res.irony;
-        document.getElementById('model').innerHTML = res.model;
-        document.getElementById('model').innerHTML = res.model;
-        document.getElementById('model').innerHTML = res.model;
-
+        
         res.sentimented_entity_list.forEach(element => {
             sentimented_entity_list +=  element.form + ', ';
         });
@@ -53,6 +57,8 @@ function processText(text) {
 
     })
     .catch(error => console.log('error', error));
+
+    return true;
 }
 
 export { processText }
