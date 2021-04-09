@@ -21,13 +21,14 @@ describe("Testing processText functionality", () => {
 
         // Input
         let text = "";
-        let url = "https://api.meaningcloud.com/sentiment-2.1";
-        let lang = "en"
+        let url = "";
+        let lang = "en";
+        let key = "";
         // The expected output
         let response = false;
 
         // The expect() function, in combination with a Jest matcher, is used to check if the function produces the expected output
-        expect(processText(url, text, lang)).toBe(response);
+        expect(processText(url, text, lang, key)).toBe(response);
     })
 
 });

@@ -1,13 +1,10 @@
-function processText(url,text, lang) {
+function processText(url,text, lang, key) {
     debugger
     var textTemp = text; // adding this temp variable because that value is changed when use trim()
     if(textTemp = null || textTemp.trim() ==""){
         alert("You must insert a text.");
         return false;
     }
-
-
-    let key ="201c43f2114dfcda474c3967055f646d";
 
     const formdata = new FormData();
     formdata.append("key", key);
@@ -55,8 +52,6 @@ function processText(url,text, lang) {
 
     })
     .catch(error => console.log('error', error));
-
-    return true;
 }
 
 export { processText }

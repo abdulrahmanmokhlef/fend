@@ -39,6 +39,13 @@ app.get('/test', function (req, res) {
     res.json(mockAPIResponse);
 })
 
+app.get('/getApiKey', function(req, res){
+  let key ={
+    key:"201c43f2114dfcda474c3967055f646d"
+  };
+  res.json(key);
+})
+
 // For the Aylien API
 app.get('/textApi', function(text, res){
     debugger
