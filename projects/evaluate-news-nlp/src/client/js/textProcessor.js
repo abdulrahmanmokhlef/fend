@@ -1,7 +1,8 @@
 function processText(url,text, lang, key) {
     debugger
     var textTemp = text; // adding this temp variable because that value is changed when use trim()
-    if(textTemp = null || textTemp.trim() ==""){
+    let regexText = /^$/;
+    if(textTemp.trim().match(regexText)){
         alert("You must insert a text.");
         return false;
     }
