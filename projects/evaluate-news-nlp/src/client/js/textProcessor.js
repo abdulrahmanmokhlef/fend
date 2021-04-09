@@ -1,8 +1,6 @@
-function processText(event) {
-    event.preventDefault()
+function processText(text) {
     debugger
     let key ="201c43f2114dfcda474c3967055f646d";
-    let text = document.getElementById('text').value
     let lang = "en"
     let url = "https://api.meaningcloud.com/sentiment-2.1";
 
@@ -42,11 +40,14 @@ function processText(event) {
         res.sentimented_entity_list.forEach(element => {
             sentimented_entity_list +=  element.form + ', ';
         });
+        // remove comma and white space from last word in the string
+        sentimented_entity_list = sentimented_entity_list.substring(0, sentimented_entity_list.length - 2);
         document.getElementById('sentimented_entity_list').innerHTML = sentimented_entity_list;
 
         res.sentimented_concept_list.forEach(element => {
             sentimented_concept_list +=  element.form + ', ';
         });
+        sentimented_concept_list = sentimented_concept_list.substring(0, sentimented_concept_list.length - 2);
         document.getElementById('sentimented_concept_list').innerHTML = sentimented_concept_list;
         
 

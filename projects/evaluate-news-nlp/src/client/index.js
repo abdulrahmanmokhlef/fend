@@ -1,4 +1,3 @@
-import { checkForName } from './js/nameChecker'
 import { handleSubmit } from './js/formHandler'
 import { processText } from './js/textProcessor'
 
@@ -8,10 +7,7 @@ import './styles/form.scss'
 import './styles/footer.scss'
 import './styles/header.scss'
 
-//console.log(checkForName);
-
 export{
-    checkForName,
     handleSubmit,
     processText
 }
