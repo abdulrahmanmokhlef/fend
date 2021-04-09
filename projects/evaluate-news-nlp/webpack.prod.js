@@ -10,15 +10,12 @@ module.exports = {
     entry: './src/client/index.js',
     mode: 'production',
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.min.js',
         libraryTarget: 'var',
         library: 'Client'
     },
     optimization: {
         minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
-
     module: {
         rules: [
             {
