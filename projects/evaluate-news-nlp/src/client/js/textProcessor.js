@@ -1,7 +1,5 @@
 function processText(url,text, lang) {
     debugger
-    const fetch = require("node-fetch");
-
     var textTemp = text; // adding this temp variable because that value is changed when use trim()
     if(textTemp = null || textTemp.trim() ==""){
         alert("You must insert a text.");

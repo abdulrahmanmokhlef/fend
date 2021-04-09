@@ -3,6 +3,7 @@ import {processText} from '../src/client/js/textProcessor'
 
 describe("Testing processText functionality", () => {
 
+    //fetch = jest.fn(() => Promise.resolve());
 
     test("Testing the function existance", () => {
             
@@ -24,18 +25,6 @@ describe("Testing processText functionality", () => {
         let lang = "en"
         // The expected output
         let response = false;
-
-        // The expect() function, in combination with a Jest matcher, is used to check if the function produces the expected output
-        expect(processText(url, text, lang)).toBe(response);
-    }),
-
-    test("Pass correct value", () => {
-        // Input
-        let text = "The restaurant was great even though it’s not near Madrid.";
-        let url = "https://api.meaningcloud.com/sentiment-2.1";
-        let lang = "en"
-        // The expected output
-        let response = true;
 
         // The expect() function, in combination with a Jest matcher, is used to check if the function produces the expected output
         expect(processText(url, text, lang)).toBe(response);
