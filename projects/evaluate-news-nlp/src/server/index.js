@@ -1,10 +1,12 @@
 var path = require('path')
 const express = require('express')
+const app = express()
+var port = process.env.PORT || 8081;
+
 var bodyParser = require('body-parser')
 var cors = require('cors')
 const mockAPIResponse = require('./mockAPI.js')
 
-const app = express()
 
 app.use(cors())
 // to use json
@@ -25,7 +27,7 @@ app.get('/', function (req, res) {
 
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
+app.listen(port, function () {
     console.log('Example app listening on port 8081!')
 })
 
